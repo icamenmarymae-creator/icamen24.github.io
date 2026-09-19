@@ -1,338 +1,114 @@
 * {
-    box-sizing: border-box;
-}
-
-body {
-   margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-
-    color: #f8fafc;
-
-    background:
-        radial-gradient(
-            circle at 15% 20%,
-            rgba(59, 130, 246, 0.15),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 85% 80%,
-            rgba(14, 165, 233, 0.12),
-            transparent 30%
-        ),
-        linear-gradient(
-            135deg,
-            #020617 0%,
-            #0f172a 50%,
-            #172554 100%
-        );
-
-    min-height: 100vh;
-    overflow-x: hidden;
-}
-
-
-  /* =========================================
-   GENERAL
-========================================= */
-
-* {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    color: #f8fafc;
-
-    background:
-        radial-gradient(circle at 15% 20%, rgba(59, 130, 246, 0.15), transparent 30%),
-        radial-gradient(circle at 85% 80%, rgba(14, 165, 233, 0.12), transparent 30%),
-        linear-gradient(135deg, #020617, #0f172a, #172554);
-
-    min-height: 100vh;
-    overflow-x: hidden;
+    background-color: #0b132b; /* Dark navy background */
+    color: #333333;             /* Default dark text for readable content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
 }
 
-
-/* =========================================
-   NAVIGATION
-========================================= */
-
 nav {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-
+    width: 100%;
+    background-color: #1c2541; /* Dark blue navbar background */
     display: flex;
-    justify-content: center;
-    gap: 35px;
-
-    padding: 18px 20px;
-
-    background: rgba(2, 6, 23, 0.75);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    justify-content: flex-end;
+    padding: 15px 50px;
+    gap: 30px;
 }
 
 nav a {
-    color: #cbd5e1;
+    color: #ffffff;             /* White text for links on dark navbar */
     text-decoration: none;
-
+    font-weight: bold;
     font-size: 0.95rem;
-    font-weight: 500;
-
-    transition: 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
-    color: #60a5fa;
-    transform: translateY(-2px);
+    color: #4ea8de;
 }
 
+header, section {
+    background-color: #ffffff; /* White card background */
+    width: 80%;
+    max-width: 900px;
+    padding: 40px;
+    margin-top: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
 
-/* =========================================
-   HEADER
-========================================= */
+header h1, section h2, .project-card h3 {
+    color: #1c2541;            /* Dark blue headings */
+    margin-bottom: 15px;
+}
+
+header p, section p, .project-card p {
+    color: #2b2d42;            /* Dark charcoal paragraph text for high contrast */
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Profile Picture Styling */
+.profile-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 20px auto;
+    border: 3px solid #1c2541;
+}
 
 header {
     text-align: center;
-    padding: 80px 20px 70px;
-
-    background: rgba(15, 23, 42, 0.45);
-
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
-
-header h1 {
-    font-size: 3rem;
-    letter-spacing: 2px;
-    margin-bottom: 12px;
-}
-
-header p {
-    color: #94a3b8;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-}
-
-
-/* =========================================
-   PROFILE IMAGE
-========================================= */
-
-.profile-img {
-    width: 160px;
-    height: 160px;
-
-    object-fit: cover;
-
-    border-radius: 50%;
-
-    border: 4px solid rgba(96, 165, 250, 0.7);
-
-    box-shadow:
-        0 0 0 8px rgba(96, 165, 250, 0.08),
-        0 0 40px rgba(59, 130, 246, 0.25);
-
-    margin-bottom: 25px;
-
-    transition: 0.4s ease;
-}
-
-.profile-img:hover {
-    transform: scale(1.05);
-
-    box-shadow:
-        0 0 0 10px rgba(96, 165, 250, 0.1),
-        0 0 55px rgba(59, 130, 246, 0.35);
-}
-
-
-/* =========================================
-   SECTIONS
-========================================= */
-
-section {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 40px;
-
-    background: rgba(15, 23, 42, 0.65);
-
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 20px;
-
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-
-    transition: 0.3s ease;
-}
-
-section:hover {
-    transform: translateY(-4px);
-
-    box-shadow:
-        0 20px 50px rgba(0, 0, 0, 0.3);
-}
-
-section h2 {
-    margin-bottom: 20px;
-
-    color: #60a5fa;
-
-    font-size: 1.8rem;
-    letter-spacing: 1px;
-}
-
-section p {
-    color: #cbd5e1;
-
-    line-height: 1.8;
-}
-
-
-/* =========================================
-   ABOUT ME
-========================================= */
-
-#about {
-    text-align: center;
-}
-
-#about p {
-    max-width: 750px;
-    margin: auto;
-}
-
-
-/* =========================================
-   PROJECTS
-========================================= */
 
 .projects-container {
     display: grid;
-
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-
-    gap: 25px;
-
-    margin-top: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
 }
 
 .project-card {
-    padding: 25px;
-
-    background: rgba(30, 41, 59, 0.65);
-
-    border: 1px solid rgba(255, 255, 255, 0.08);
-
-    border-radius: 16px;
-
-    transition: 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-8px);
-
-    border-color: rgba(96, 165, 250, 0.4);
-
-    box-shadow:
-        0 15px 35px rgba(0, 0, 0, 0.25);
-}
-
-.project-card h3 {
-    color: #f8fafc;
-
-    margin-bottom: 12px;
-}
-
-.project-card p {
-    color: #94a3b8;
-
-    line-height: 1.6;
+    background-color: #f8f9fa; /* Slightly off-white card background */
+    border: 1px solid #e9ecef;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .project-card a {
-    display: inline-block;
-
-    margin-top: 18px;
-
-    color: #60a5fa;
-
+    color: #0077b6;
     text-decoration: none;
-
-    font-weight: 600;
-
-    transition: 0.3s ease;
+    font-weight: bold;
+    margin-top: 15px;
+    display: inline-block;
 }
 
 .project-card a:hover {
-    color: #93c5fd;
+    text-decoration: underline;
 }
 
-
-/* =========================================
-   FOOTER
-========================================= */
-
 footer {
-    margin-top: 70px;
-    padding: 35px 20px;
-
+    width: 100%;
     text-align: center;
-
-    background: rgba(2, 6, 23, 0.85);
-
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-
-    color: #94a3b8;
+    padding: 30px;
+    margin-top: 40px;
+    color: #a0aab2;             /* Light gray text for dark footer background */
+    font-size: 0.9rem;
 }
 
 footer p {
-    margin: 5px 0;
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 768px) {
-
-    nav {
-        gap: 15px;
-        flex-wrap: wrap;
-    }
-
-    nav a {
-        font-size: 0.85rem;
-    }
-
-    header {
-        padding: 60px 20px;
-    }
-
-    header h1 {
-        font-size: 2.2rem;
-    }
-
-    .profile-img {
-        width: 130px;
-        height: 130px;
-    }
-
-    section {
-        margin: 25px 15px;
-        padding: 25px;
-    }
+    color: #a0aab2;
 }
