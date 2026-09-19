@@ -1,453 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Student Portfolio</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Student Portfolio</title>
 
-    body {
-      background-color: #fcf4f6; /* Soft pink tint background */
-      color: #333333;
-      display: flex;
-      justify-content: center;
-      padding: 30px 16px 0 16px;
-    }
+    <link rel="stylesheet" href="style.css">
 
-    .portfolio-wrapper {
-      width: 100%;
-      max-width: 440px;
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-    }
-
-    /* Section Typography */
-    .section-header {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .section-title {
-      font-size: 28px;
-      font-weight: 800;
-      color: #432832;
-      margin-bottom: 6px;
-    }
-
-    .section-subtitle {
-      font-size: 14px;
-      color: #9d7b88;
-      font-weight: 400;
-    }
-
-    /* Standard Cards */
-    .card-list {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .card {
-      background: #ffffff;
-      border-radius: 20px;
-      padding: 20px 24px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.015);
-    }
-
-    /* Hero Section */
-    .hero-card {
-      background: #ffffff;
-      border-radius: 28px;
-      padding: 16px;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .profile-img {
-      width: 100%;
-      height: auto;
-      border-radius: 20px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .hero-tag {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      color: #a45a73;
-      text-transform: uppercase;
-      margin-top: 24px;
-      margin-bottom: 8px;
-    }
-
-    .hero-name {
-      font-size: 28px;
-      font-weight: 800;
-      color: #381f28;
-      line-height: 1.15;
-      margin-bottom: 16px;
-    }
-
-    .hero-description {
-      font-size: 14px;
-      color: #725e66;
-      line-height: 1.5;
-      padding: 0 10px;
-    }
-
-    /* Key-Value Details Cards */
-    .detail-card {
-      background: #ffffff;
-      border-radius: 18px;
-      padding: 16px 20px;
-    }
-
-    .detail-label {
-      font-size: 11px;
-      font-weight: 700;
-      color: #a45a73;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-      display: block;
-    }
-
-    .detail-value {
-      font-size: 15px;
-      font-weight: 700;
-      color: #2c2c2c;
-    }
-
-    /* Paragraph Card Content */
-    .card-p {
-      font-size: 14px;
-      line-height: 1.6;
-      color: #555555;
-      margin-bottom: 14px;
-    }
-
-    .card-p:last-child {
-      margin-bottom: 0;
-    }
-
-    /* Education Items */
-    .edu-card {
-      border-left: 4px solid #a45a73;
-      padding-left: 18px;
-    }
-
-    .edu-title {
-      font-size: 16px;
-      font-weight: 700;
-      color: #381f28;
-      margin-bottom: 6px;
-    }
-
-    .edu-meta {
-      font-size: 13px;
-      color: #725e66;
-      margin-bottom: 4px;
-    }
-
-    /* Skill Badges */
-    .skills-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .skill-badge {
-      background: #ffffff;
-      border: 1px solid #f2dbe2;
-      padding: 10px 24px;
-      border-radius: 50px;
-      font-size: 13px;
-      font-weight: 700;
-      color: #5a2e3e;
-      text-align: center;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.01);
-    }
-
-    /* Projects & Certificates */
-    .card-heading {
-      font-size: 17px;
-      font-weight: 700;
-      color: #381f28;
-      margin-bottom: 8px;
-      text-align: left;
-    }
-
-    .card-center-heading {
-      font-size: 16px;
-      font-weight: 700;
-      color: #381f28;
-      margin-bottom: 8px;
-      text-align: center;
-    }
-
-    .cert-org {
-      font-size: 12px;
-      font-weight: 700;
-      color: #a45a73;
-      margin-bottom: 6px;
-      text-transform: uppercase;
-    }
-
-    .cert-detail {
-      font-size: 13px;
-      color: #666666;
-      margin-bottom: 2px;
-    }
-
-    /* Goals Card */
-    .highlight-card {
-      background: #f8e8ec;
-      border-radius: 20px;
-      padding: 24px;
-      text-align: center;
-    }
-
-    .highlight-card p {
-      font-size: 14px;
-      line-height: 1.6;
-      color: #4a2d37;
-    }
-
-    /* Buttons / Links */
-    .contact-links {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-      margin-top: 10px;
-    }
-
-    .btn {
-      display: block;
-      width: 100%;
-      max-width: 220px;
-      padding: 12px;
-      background-color: #b05c77;
-      color: #ffffff;
-      text-align: center;
-      border-radius: 50px;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 600;
-      transition: background-color 0.2s;
-    }
-
-    .btn:hover {
-      background-color: #934a61;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 30px 0;
-      font-size: 12px;
-      color: #888888;
-      background: #f7e7eb;
-      margin-left: -16px;
-      margin-right: -16px;
-      margin-top: 10px;
-    }
-  </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-  <div class="portfolio-wrapper">
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <h2 class="logo">My Portfolio</h2>
 
-    <!-- HERO SECTION -->
-    <section>
-      <div class="hero-card">
-        <!-- Replace 'profile.jpg' with your image file name or link -->
-        <img src="https://via.placeholder.com/400x500" alt="Profile Picture" class="profile-img">
-      </div>
-      <div style="text-align: center;">
-        <div class="hero-tag">Student Portfolio</div>
-        <h1 class="hero-name">Arra Tarroquin<br>Arcilla</h1>
-        <p class="hero-description">A student portfolio showcasing my education, skills, training, interests, and projects.</p>
-      </div>
-    </section>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- BASIC DETAILS SECTION -->
-    <section class="card-list">
-      <div class="card detail-card">
-        <span class="detail-label">AGE</span>
-        <div class="detail-value">19 years old</div>
-      </div>
-      <div class="card detail-card">
-        <span class="detail-label">COURSE</span>
-        <div class="detail-value">Bachelor of Science in Computer Science</div>
-      </div>
-      <div class="card detail-card">
-        <span class="detail-label">YEAR LEVEL</span>
-        <div class="detail-value">2nd Year</div>
-      </div>
-      <div class="card detail-card">
-        <span class="detail-label">SCHOOL</span>
-        <div class="detail-value">Catanduanes State University</div>
-      </div>
-      <div class="card detail-card">
-        <span class="detail-label">COLLEGE</span>
-        <div class="detail-value">College of Information and Communications Technology</div>
-      </div>
-    </section>
+    <!-- Home -->
+    <section id="home" class="hero">
 
-    <!-- ABOUT ME -->
-    <section>
-      <div class="section-header">
-        <h2 class="section-title">About Me</h2>
-        <p class="section-subtitle">A little about my interests and personality</p>
-      </div>
-      <div class="card">
-        <p class="card-p">I enjoy learning new things, exploring creative ideas, and developing practical skills through hands-on activities. I am interested in technology, design, and creating digital projects. I also enjoy spending time with plants and animals and finding simple ways to express my creativity.</p>
-        <p class="card-p">I believe that learning is a continuous process. I enjoy improving my skills by trying new things, practicing what I learn, and gaining experience through different activities and projects.</p>
-      </div>
-    </section>
+        <div class="hero-text">
+            <p class="small-text">HELLO, I'M</p>
 
-    <!-- EDUCATION -->
-    <section>
-      <div class="section-header">
-        <h2 class="section-title">Education</h2>
-        <p class="section-subtitle">My educational background</p>
-      </div>
-      <div class="card-list">
-        <div class="card edu-card">
-          <h3 class="edu-title">Catanduanes State University</h3>
-          <p class="edu-meta">2025-Present</p>
-          <p class="edu-meta">Bachelor of Science in Computer Science</p>
-          <p class="edu-meta">Second Year</p>
+            <h1>Mary Mae <span>Icamen</span></h1>
+
+            <h2>Computer Science Student</h2>
+
+            <p>
+                Welcome to my personal portfolio. I am a student who is
+                passionate about technology, programming, and learning
+                new things in the world of computer science.
+            </p>
+
+            <a href="#about" class="button">Explore My Portfolio</a>
         </div>
-        <div class="card edu-card">
-          <h3 class="edu-title">Buyo Integrated School</h3>
-          <p class="edu-meta">2023-2025</p>
-          <p class="edu-meta">Senior High School</p>
-          <p class="edu-meta">TVL - Computer Systems Servicing (CSS)</p>
+
+        <div class="profile">
+            <div class="profile-circle">
+                <span>👩🏻‍💻</span>
+            </div>
         </div>
-      </div>
+
     </section>
 
-    <!-- TECHNICAL SKILLS -->
-    <section>
-      <div class="section-header">
-        <h2 class="section-title">Technical Skills & Knowledge</h2>
-        <p class="section-subtitle">Technologies and tools I am familiar with</p>
-      </div>
-      <div class="skills-container">
-        <div class="skill-badge">Java — Currently Learning</div>
-        <div class="skill-badge">C++ — Currently Learning</div>
-        <div class="skill-badge">HTML — Basic</div>
-        <div class="skill-badge">CSS — Basic</div>
-        <div class="skill-badge">Canva — Comfortable Using</div>
-        <div class="skill-badge">Photoshop — Basic</div>
-        <div class="skill-badge">GitHub — Basic</div>
-        <div class="skill-badge">Computer Troubleshooting — Basic</div>
-      </div>
-    </section>
 
-    <!-- PROJECTS -->
-    <section>
-      <div class="section-header">
-        <h2 class="section-title">Projects</h2>
-        <p class="section-subtitle">Projects I have worked on</p>
-      </div>
-      <div class="card">
-        <h3 class="card-heading">Personal Profile Website</h3>
-        <p class="card-p">A personal profile website created using HTML and CSS and deployed through GitHub Pages. This website presents my background, skills, education, training, interests, and other information in a simple portfolio format.</p>
-      </div>
-    </section>
+    <!-- About -->
+    <section id="about" class="section">
 
-    <!-- TRAINING & CERTIFICATES -->
-    <section>
-      <div class="section-header">
-        <h2 class="section-title">Training & Certificates</h2>
-        <p class="section-subtitle">Training and qualifications I have completed</p>
-      </div>
-      <div class="card-list">
+        <p class="section-label">GET TO KNOW ME</p>
+        <h2>About Me</h2>
+
         <div class="card">
-          <h3 class="card-heading">Unlocking Your Creativity: Introduction to Photoshop</h3>
-          <div class="cert-org">DICT</div>
-          <p class="cert-detail">Certificate of Completion</p>
-          <p class="cert-detail">8-hours training</p>
-          <p class="cert-detail">October 2024</p>
+            <p>
+                I am a Computer Science student who enjoys exploring
+                technology and learning how software works. I am currently
+                developing my skills in programming, web development,
+                problem-solving, and computer-related technologies.
+            </p>
+
+            <p>
+                As a student, I believe that learning is a continuous
+                process. I enjoy challenging myself with programming
+                activities and school projects because they help me improve
+                my creativity, logical thinking, and technical skills.
+            </p>
+
+            <p>
+                My goal is to continue improving my knowledge and become
+                a skilled and responsible technology professional in the
+                future.
+            </p>
         </div>
-        <div class="card">
-          <h3 class="card-heading">Godot Development 101: The Fundamentals</h3>
-          <div class="cert-org">DICT</div>
-          <p class="cert-detail">Certificate of Participation</p>
-          <p class="cert-detail">16-hours training</p>
-        </div>
-      </div>
+
     </section>
 
-    <!-- HOBBIES & INTERESTS -->
-    <section>
-      <div class="section-header">
-        <h2 class="section-title">Hobbies & Interests</h2>
-        <p class="section-subtitle">Things I enjoy doing</p>
-      </div>
-      <div class="card-list">
-        <div class="card" style="text-align: center;">
-          <h3 class="card-center-heading">Drawing</h3>
-          <p class="card-p">I enjoy drawing as a creative way to express ideas and relax my mind.</p>
+
+    <!-- Education -->
+    <section id="education" class="section">
+
+        <p class="section-label">MY ACADEMIC JOURNEY</p>
+        <h2>Education</h2>
+
+        <div class="education-card">
+
+            <div class="education-icon">🎓</div>
+
+            <div>
+                <h3>Bachelor of Science in Computer Science</h3>
+
+                <p class="school">
+                    Your School / University
+                </p>
+
+                <p>
+                    Currently studying Computer Science with an interest
+                    in programming, software development, and technology.
+                </p>
+
+                <span class="year">202X - Present</span>
+            </div>
+
         </div>
-        <div class="card" style="text-align: center;">
-          <h3 class="card-center-heading">Plants & Animals</h3>
-          <p class="card-p">I enjoy spending time with plants like watering them and taking care of my Cats.</p>
-        </div>
-        <div class="card" style="text-align: center;">
-          <h3 class="card-center-heading">Technology</h3>
-          <p class="card-p">I enjoy exploring technology and learning how different digital tools work.</p>
-        </div>
-      </div>
+
     </section>
 
-    <!-- GOALS -->
-    <section>
-      <div class="section-header">
-        <h2 class="section-title">My Goals</h2>
-        <p class="section-subtitle">What I want to achieve</p>
-      </div>
-      <div class="highlight-card">
-        <p>My goal is to learn different programming languages, improve my programming skills, create websites, and deepen my knowledge of technology.</p>
-      </div>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+
+        <p class="section-label">WHAT I AM LEARNING</p>
+        <h2>My Skills</h2>
+
+        <div class="skills-container">
+
+            <div class="skill-card">
+                <div class="skill-icon">💻</div>
+                <h3>C++</h3>
+                <p>Programming fundamentals and problem solving.</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">🌐</div>
+                <h3>HTML</h3>
+                <p>Creating and organizing web pages.</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">🎨</div>
+                <h3>CSS</h3>
+                <p>Designing attractive and responsive websites.</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">🧩</div>
+                <h3>Problem Solving</h3>
+                <p>Developing logical and analytical thinking.</p>
+            </div>
+
+        </div>
+
     </section>
 
-    <!-- CONTACT -->
-    <section>
-      <div class="section-header">
-        <h2 class="section-title">Contact</h2>
-        <p class="section-subtitle">Connect with me online</p>
-      </div>
-      <div style="text-align: center;">
-        <p class="card-p" style="margin-bottom: 20px;">You can visit my profiles to see my projects and connect with me online.</p>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+
+        <p class="section-label">MY SCHOOL WORK</p>
+        <h2>Projects</h2>
+
+        <div class="projects-container">
+
+            <div class="project-card">
+                <span class="project-number">01</span>
+
+                <h3>C++ Programming</h3>
+
+                <p>
+                    A collection of programming exercises created while
+                    learning C++, including arrays, pointers, and data
+                    structures.
+                </p>
+
+                <div class="tags">
+                    <span>C++</span>
+                    <span>Programming</span>
+                </div>
+            </div>
+
+
+            <div class="project-card">
+                <span class="project-number">02</span>
+
+                <h3>Student Portfolio</h3>
+
+                <p>
+                    A personal website created using HTML and CSS to
+                    showcase my background, education, skills, and projects.
+                </p>
+
+                <div class="tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                </div>
+            </div>
+
+
+            <div class="project-card">
+                <span class="project-number">03</span>
+
+                <h3>Data Structure Activities</h3>
+
+                <p>
+                    School exercises involving different data structures
+                    and programming concepts.
+                </p>
+
+                <div class="tags">
+                    <span>Programming</span>
+                    <span>Data Structures</span>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact" class="section contact">
+
+        <p class="section-label">LET'S CONNECT</p>
+        <h2>Contact Me</h2>
+
+        <p>
+            Thank you for visiting my portfolio. You can connect with me
+            through the following:
+        </p>
+
         <div class="contact-links">
-          <a href="https://github.com/heyara-arra" target="_blank" class="btn">Visit My GitHub</a>
-          <a href="#" target="_blank" class="btn">Visit My Instagram</a>
+            <a href="mailto:your@email.com">📧 Email</a>
+            <a href="https://github.com/">💻 GitHub</a>
         </div>
-      </div>
+
     </section>
 
-    <!-- FOOTER -->
-    <footer>
-      © 2026 Student Portfolio
-    </footer>
 
-  </div>
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Mary Mae Icamen • Student Portfolio</p>
+        <p>Built with HTML & CSS ♡</p>
+    </footer>
 
 </body>
 </html>
-Sent
-Compose
-Write to
