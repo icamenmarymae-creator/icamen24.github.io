@@ -3,12 +3,32 @@
 }
 
 body {
-   font-family: Arial, sans-serif;
-    margin: 0;
+   margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #0f172a, #312e81, #581c87);
-    color: white;
+    font-family: Arial, sans-serif;
+
+    color: #f8fafc;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(59, 130, 246, 0.15),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(14, 165, 233, 0.12),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #020617 0%,
+            #0f172a 50%,
+            #172554 100%
+        );
+
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 header {
