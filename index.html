@@ -1,114 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Mary Mae Icamen| Student Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio | BSCS Student</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-    <header>
-        <h1>Mary Mae Icamen</h1>
-        <p>Computer Science Student</p>
+    <!-- Header & Navigation -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="#hero">MyPortfolio</a>
+        </div>
+        <nav aria-label="Main Navigation">
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav>
-        <a href="#about">About Me</a>
-        <a href="#education">Personal Information</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#objective">Objective</a>
-        <a href="#contact">Contact</a>
-        <a href="#about"></a>
-    </nav>
+    <main>
+        <!-- Hero / Overview Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <h1>Hi, I'm <span class="highlight"> [Your Name]</span></h1>
+                <p>Computer Science Student | Web Developer</p>
+                <a href="#projects" class="btn">View My Work</a>
+            </div>
+        </section>
 
-    <section id="about">
+        <!-- About Section -->
+        <section id="about" class="container">
+            <h2>About Me</h2>
+            <div class="about-grid">
+                <img src="https://via.placeholder.com/200" alt="Profile photo of [Your Name]" class="profile-img">
+                <div>
+                    <p>Welcome to my portfolio! I am currently a Computer Science student passionate about web development, software engineering, and design. This project showcases my journey and technical skills.</p>
+                </div>
+            </div>
+        </section>
 
-        <img src="7990c5fd-de1b-4956-9889-b1f80068d945 (1).jpg">
-        <h2>About Me</h2>
-        <p>
-            Hello! I am Mary Mae, an Computer Science student
-            who is interested in programming, web development, and
-            learning new technologies. I enjoy learning how websites 
-            and computer programs work and discovering new ways to improve 
-            my coding skills through school projects and practical activities. 
-            I am friendly,responsible,and hardworking person who enjoys learning
-            new things and improving myself. I may be quiet and a little shy at firts,
-            but i become more comfortable and open once i get to know the people around me.
-            I value respect ,and kindness in my relationship with others. I am also someone
-            who willing to learn from others and accept constructive feedback.
-        </p>
-    </section>
+        <!-- Skills Section -->
+        <section id="skills" class="container bg-light">
+            <h2>Skills</h2>
+            <ul class="skills-list">
+                <li>HTML5 / Semantic Markup</li>
+                <li>CSS3 / Responsive Design</li>
+                <li>JavaScript Fundamentals</li>
+                <li>Git & GitHub</li>
+            </ul>
+        </section>
 
-    <section id="education">
-        <h2>Personal Information</h2>
-        <p>
-            <strong>Computer Science Student</strong>
-        </p>
-        <p>
-            
-        </p>
-    </section>
+        <!-- Projects Section -->
+        <section id="projects" class="container">
+            <h2>Projects</h2>
+            <div class="card-grid">
+                <article class="card">
+                    <h3>Portfolio Website</h3>
+                    <p>A responsive static portfolio built with HTML5 and CSS3 showcasing responsive layout principles.</p>
+                    <a href="#" class="link">View Source</a>
+                </article>
+                <article class="card">
+                    <h3>Project 2 (In Development)</h3>
+                    <p>Work-in-progress web application focusing on user experience and dynamic content rendering.</p>
+                    <a href="#" class="link">Coming Soon</a>
+                </article>
+            </div>
+        </section>
 
-    <section id="skills">
-        <h2>My Skills</h2>
+        <!-- Contact Section -->
+        <section id="contact" class="container bg-light">
+            <h2>Contact Me</h2>
+            <form action="#" method="post" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="Your Full Name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="Your Email Address">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required placeholder="Your Message"></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </section>
+    </main>
 
-        <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>C++ Programming</li>
-            <li>Java Programming</li>
-            <li>Basic Web Development</li>
-            <li>Problem Solving</li>
-        </ul>
-    </section>
-
-    <section id="projects">
-        <h2>My Projects</h2>
-
-        <div class="project">
-            <h3>C++ Pointer and Array Project</h3>
-            <p>
-                A C++ program that uses pointers to store values
-                in an array and display their memory addresses.
-            </p>
-        </div>
-
-        <div class="project">
-            <h3>C++ Linked List Project</h3>
-            <p>
-                A programming project demonstrating the basic
-                concept and operations of a linked list.
-            </p>
-        </div>
-
-        <div class="project">
-            <h3>Student Portfolio Website</h3>
-            <p>
-                A personal portfolio created using HTML and CSS
-                and published using GitHub Pages.
-            </p>
-        </div>
-    </section>
-
-    <section id="objective">
-        <h2>Career Objective</h2>
-        <p>
-            My goal is to continue developing my programming and
-            technical skills and gain experience in creating
-            useful and practical technology solutions.
-        </p>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: your-email@example.com</p>
-        <p>GitHub: icamenmarymae-creator</p>
-    </section>
-
+    <!-- Footer -->
     <footer>
-        <p>© 2026 Mary Mae | Student Portfolio</p>
+        <p>&copy; 2026 [Your Name]. All rights reserved.</p>
     </footer>
 
 </body>
 </html>
+                
+   
