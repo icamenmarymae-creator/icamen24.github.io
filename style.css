@@ -1,345 +1,102 @@
-:root {
-    --primary-color: #2563eb;
-    --primary-hover: #1d4ed8;
-    --dark-bg: #0f172a;
-    --code-bg: #1e293b;
-    --accent-blue: #38bdf8;
-    --accent-purple: #c084fc;
-    --light-bg: #f8fafc;
-    --card-bg: #ffffff;
-    --text-color: #334155;
-    --text-muted: #64748b;
-    --border-color: #e2e8f0;
-    --font-stack: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    --code-font: 'Fira Code', 'Consolas', 'Courier New', monospace;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    font-family: var(--font-stack);
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: #ffffff;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+
+    /* Dark CS / Coding background */
+    background:
+        linear-gradient(rgba(10, 15, 30, 0.92), rgba(5, 10, 25, 0.96)),
+        repeating-linear-gradient(
+            0deg,
+            transparent 0px,
+            transparent 39px,
+            rgba(0, 255, 255, 0.08) 40px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent 0px,
+            transparent 39px,
+            rgba(0, 255, 255, 0.08) 40px
+        );
+
+    min-height: 100vh;
 }
 
-/* ==========================================
-   2. GLOBAL BACKGROUND PATTERNS & UTILITIES
-   ========================================== */
-
-/* Subtitle Code Text Pattern */
-.code-tag {
-    font-family: var(--code-font);
-    color: var(--accent-blue);
-}
-
-.container {
-    max-width: 1050px;
-    margin: 0 auto;
-    padding: 4rem 1.5rem;
-}
-
-/* Technical Grid Pattern for Light Backgrounds */
-.bg-light {
-    background-color: var(--light-bg);
-    background-image: 
-        linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-    background-size: 24px 24px;
-}
-
-.section-title {
-    font-size: 2rem;
-    color: var(--dark-bg);
-    margin-bottom: 1.5rem;
-    text-align: center;
-    position: relative;
-}
-
-.highlight {
-    color: var(--accent-blue);
-}
-
-/* ==========================================
-   3. NAVIGATION BAR
-   ========================================== */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba(15, 23, 42, 0.95);
-    backdrop-filter: blur(8px);
-    padding: 1rem 2rem;
-    position: sticky;
+/* Computer Science / coding glow */
+body::before {
+    content: "</ >  0101  { }  #include  AI  C++  JAVA";
+    position: fixed;
     top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.navbar .logo a {
-    color: #ffffff;
-    font-family: var(--code-font);
-    font-size: 1.25rem;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 1.5rem;
-}
-
-.nav-links a {
-    color: #f1f5f9;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s ease;
-}
-
-.nav-links a:hover,
-.nav-links a:focus {
-    color: var(--accent-blue);
-}
-
-/* ==========================================
-   4. HERO SECTION (DARK GRID & GRADIENT DESIGN)
-   ========================================== */
-.hero-section {
-    background-color: var(--dark-bg);
-    /* CSS Grid Pattern Overlay + Dark Radial Vignette */
-    background-image: 
-        radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.15) 0%, transparent 70%),
-        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-    background-size: 100% 100%, 30px 30px, 30px 30px;
-    color: #ffffff;
-    text-align: center;
-    padding: 6rem 1.5rem;
-    position: relative;
-    overflow: hidden;
-}
-
-/* CSS-themed background watermark decorations */
-.hero-section::before {
-    content: "{ CSS }";
-    font-family: var(--code-font);
-    position: absolute;
-    top: -20px;
-    right: 5%;
-    font-size: 12rem;
-    font-weight: 800;
-    color: rgba(255, 255, 255, 0.02);
-    user-select: none;
-    pointer-events: none;
-}
-
-.hero-content h1 {
-    font-size: 2.75rem;
-    margin-bottom: 0.75rem;
-    letter-spacing: -0.5px;
-}
-
-.hero-content p {
-    font-size: 1.25rem;
-    color: #94a3b8;
-    margin-bottom: 2rem;
-}
-
-/* ==========================================
-   5. ABOUT & SKILLS SECTIONS
-   ========================================== */
-.about-grid {
-    display: flex;
-    align-items: center;
-    gap: 2.5rem;
-}
-
-.profile-img {
-    border-radius: 50%;
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border: 4px solid var(--primary-color);
-    box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.25);
-}
-
-.skills-list {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-}
-
-.skills-list li {
-    background: #ffffff;
-    padding: 0.85rem 1.25rem;
-    border-radius: 6px;
-    border-left: 4px solid var(--primary-color);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-    font-family: var(--code-font);
-    font-size: 0.95rem;
-}
-
-/* ==========================================
-   6. PROJECTS CARD GRID
-   ========================================== */
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-}
-
-.card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    padding: 1.75rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    position: relative;
-}
-
-/* Subtle accent highlight line on card hover */
-.card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.1);
-    border-color: var(--accent-blue);
-}
-
-.card h3 {
-    margin-bottom: 0.5rem;
-    color: var(--dark-bg);
-}
-
-.card p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-}
-
-.card-link {
-    display: inline-block;
-    margin-top: 1.25rem;
-    color: var(--primary-color);
-    font-weight: 600;
-    text-decoration: none;
-    font-family: var(--code-font);
-}
-
-.card-link:hover {
-    color: var(--primary-hover);
-    text-decoration: underline;
-}
-
-/* ==========================================
-   7. CONTACT FORM
-   ========================================== */
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto;
-    background: #ffffff;
-    padding: 2rem;
-    border-radius: 10px;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-}
-
-.form-group label {
-    font-weight: 600;
-    color: var(--dark-bg);
-    font-size: 0.9rem;
-}
-
-.form-group input,
-.form-group textarea {
+    left: 0;
     width: 100%;
-    padding: 0.75rem;
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    font-size: 1rem;
-    font-family: inherit;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    padding: 15px 0;
+    text-align: center;
+
+    color: rgba(0, 255, 255, 0.12);
+    font-family: "Courier New", monospace;
+    font-size: 18px;
+    letter-spacing: 4px;
+
+    pointer-events: none;
+    z-index: -1;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+/* Main portfolio container */
+.container {
+    width: 85%;
+    max-width: 1100px;
+    margin: 40px auto;
 }
 
-/* Button Component */
-.btn {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: #ffffff;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 600;
+/* CS-style sections */
+section {
+    background: rgba(15, 23, 42, 0.88);
+    border: 1px solid rgba(0, 255, 255, 0.25);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 0 20px rgba(0, 255, 255, 0.08);
+}
+
+/* Headings */
+h1, h2, h3 {
+    font-family: "Courier New", monospace;
+    color: #00ffff;
+}
+
+/* Code-like text */
+.code-text {
+    font-family: "Courier New", monospace;
+    color: #9effff;
+}
+
+/* Links */
+a {
+    color: #00ffff;
     text-decoration: none;
-    text-align: center;
-    transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-.btn:hover {
-    background-color: var(--primary-hover);
+a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px #00ffff;
 }
 
-/* ==========================================
-   8. FOOTER
-   ========================================== */
-footer {
-    text-align: center;
-    padding: 2rem 1.5rem;
-    background-color: var(--dark-bg);
-    color: #94a3b8;
-    font-size: 0.9rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+/* GitHub-style button */
+.button {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #161b22;
+    border: 1px solid #00ffff;
+    border-radius: 8px;
+    color: #00ffff;
+    font-family: "Courier New", monospace;
+    transition: 0.3s;
 }
 
-/* ==========================================
-   9. MOBILE RESPONSIVE LAYOUT (MEDIA QUERY)
-   ========================================== */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        gap: 0.8rem;
-    }
-
-    .about-grid {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-
-    .container {
-        padding: 2.5rem 1rem;
-    }
+.button:hover {
+    background: #00ffff;
+    color: #0a0f1e;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
 }
