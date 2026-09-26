@@ -3,102 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio | BSCS Student</title>
+    <meta name="description" content="Midterm Portfolio Project for BSCS - Demonstrating web layout, semantic structure, and responsive design.">
+    <title>Student Portfolio | Midterm Update</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- Header & Navigation -->
-    <header class="navbar">
-        <div class="logo">
-            <a href="#hero">MyPortfolio</a>
+    <!-- Navigation Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="#hero" class="brand-logo" aria-label="Portfolio Home">DevPortfolio</a>
+            <nav class="main-nav" aria-label="Main Navigation">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav aria-label="Main Navigation">
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <main>
-        <!-- Hero / Overview Section -->
+    <main id="main-content">
+
+        <!-- Hero Section -->
         <section id="hero" class="hero-section">
             <div class="hero-content">
-                <h1>Hi, I'm <span class="highlight"> [Your Name]</span></h1>
-                <p>Computer Science Student | Web Developer</p>
-                <a href="#projects" class="btn">View My Work</a>
+                <h1>Hello, I'm <span class="highlight-text">[Your Name]</span></h1>
+                <p>BSCS Student & Aspiring Full-Stack Web Developer</p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                </div>
             </div>
         </section>
 
         <!-- About Section -->
-        <section id="about" class="container">
-            <h2>About Me</h2>
+        <section id="about" class="section-container">
+            <h2 class="section-title">About Me</h2>
             <div class="about-grid">
-                <img src="https://via.placeholder.com/200" alt="Profile photo of [Your Name]" class="profile-img">
-                <div>
-                    <p>Welcome to my portfolio! I am currently a Computer Science student passionate about web development, software engineering, and design. This project showcases my journey and technical skills.</p>
+                <div class="about-image-wrapper">
+                    <img src="https://via.placeholder.com/250" alt="Profile photo of [Your Name]" class="profile-img">
+                </div>
+                <div class="about-text">
+                    <p>I am a Computer Science student focused on learning modern web development practices. This website showcases my midterm project progress, design structure, and functional implementations.</p>
+                    <p>My goal is to create user-friendly, accessible, and performant web applications following core web standards.</p>
                 </div>
             </div>
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="container bg-light">
-            <h2>Skills</h2>
-            <ul class="skills-list">
-                <li>HTML5 / Semantic Markup</li>
-                <li>CSS3 / Responsive Design</li>
-                <li>JavaScript Fundamentals</li>
-                <li>Git & GitHub</li>
-            </ul>
+        <section id="skills" class="section-container bg-light">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <ul>
+                        <li>HTML5 (Semantic Markup)</li>
+                        <li>CSS3 (Flexbox & Grid)</li>
+                        <li>Responsive Web Design</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Developer Tools</h3>
+                    <ul>
+                        <li>Git & GitHub</li>
+                        <li>VS Code</li>
+                        <li>Chrome DevTools</li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="container">
-            <h2>Projects</h2>
-            <div class="card-grid">
-                <article class="card">
-                    <h3>Portfolio Website</h3>
-                    <p>A responsive static portfolio built with HTML5 and CSS3 showcasing responsive layout principles.</p>
-                    <a href="#" class="link">View Source</a>
+        <section id="projects" class="section-container">
+            <h2 class="section-title">Current Projects</h2>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <h3>Personal Portfolio Website</h3>
+                    <p>A responsive static website demonstrating proper HTML structure, layout styling, and accessibility standards.</p>
+                    <a href="#hero" class="project-link">View Live Demo</a>
                 </article>
-                <article class="card">
-                    <h3>Project 2 (In Development)</h3>
-                    <p>Work-in-progress web application focusing on user experience and dynamic content rendering.</p>
-                    <a href="#" class="link">Coming Soon</a>
+                <article class="project-card">
+                    <h3>Project Two (In Progress)</h3>
+                    <p>Upcoming web module focused on interactive JavaScript features and data handling.</p>
+                    <span class="badge">Planned - Final Term</span>
                 </article>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="container bg-light">
-            <h2>Contact Me</h2>
+        <section id="contact" class="section-container bg-light">
+            <h2 class="section-title">Contact Me</h2>
             <form action="#" method="post" class="contact-form">
                 <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required placeholder="Your Full Name">
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" name="name" required placeholder="John Doe">
                 </div>
                 <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required placeholder="Your Email Address">
+                    <label for="email-address">Email Address</label>
+                    <input type="email" id="email-address" name="email" required placeholder="john@example.com">
                 </div>
                 <div class="form-group">
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="4" required placeholder="Your Message"></textarea>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Write your message here..."></textarea>
                 </div>
-                <button type="submit" class="btn">Send Message</button>
+                <button type="submit" class="btn btn-primary">Send Message</button>
             </form>
         </section>
+
     </main>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 [Your Name]. All rights reserved.</p>
+    <footer class="site-footer">
+        <p>&copy; 2026 [Your Name] | Computer Science Project</p>
     </footer>
 
 </body>
 </html>
-                
-   
