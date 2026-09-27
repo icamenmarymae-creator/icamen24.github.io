@@ -276,12 +276,6 @@ header {
         0 0 10px rgba(0, 255, 255, 0.3);
 }
 
-.section > h2::before {
-    content: "// ";
-
-    color: #6e7681;
-}
-
 
 /* =====================================
    ABOUT SECTION
